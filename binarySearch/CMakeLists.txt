@@ -8,6 +8,6 @@ INCLUDE_DIRECTORIES(include)
 
 file(GLOB SOURCES "src/*.cpp")
 
-ADD_LIBRARY(main "catch.hpp")
+#ADD_LIBRARY(main "catch.hpp")
 
 ADD_EXECUTABLE(main ${SOURCES})
