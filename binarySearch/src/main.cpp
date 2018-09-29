@@ -8,21 +8,18 @@ bool binarySearch(int* array, int arrayLength, int value) {
 	else if(arrayLength == 0)
 		return false;
 	else if(value < *(array+((arrayLength-1)/2)))
-		return binarySearch(array+((arrayLength-1)/2)-1,(arrayLength-1)/2,value);
+		return binarySearch(array, (arrayLength-1)/2,value);
 	else 
 		return binarySearch((array+((arrayLength-1)/2))+1,arrayLength-((arrayLength-1)/2)+1,value);
 }
 
 int binarySearchWithIndex(int* array, int arrayLength, int value, int index) {	
-	printf("Index: %d\n", index);
-	printf("ArrayLength: %d\n", index);
-	printf("Element 0: %d\n", *array);
 	if(value == *(array+((arrayLength-1)/2)))
 		return index+((arrayLength-1)/2);	
 	else if(arrayLength == 0)
 		return -1;
 	else if(value < *(array+((arrayLength-1)/2)))
-		return binarySearchWithIndex(array+((arrayLength-1)/2)-1,(arrayLength-1)/2,value,index);
+		return binarySearchWithIndex(array,(arrayLength-1)/2,value,index);
 	else 
 		return binarySearchWithIndex((array+((arrayLength-1)/2))+1,arrayLength-((arrayLength-1)/2)+1,value,index+((arrayLength-1)/2)+1);
 }
@@ -61,8 +58,6 @@ int main(int argc, char** argv) {
 
 	assert(binarySearchWithIndex(oddLengthArray,5,0,0)==-1);		
 	assert(binarySearchWithIndex(oddLengthArray,5,1,0)==0);
-
-	printf("Failing case\n");
 	assert(binarySearchWithIndex(oddLengthArray,5,2,0)==1);	
 	assert(binarySearchWithIndex(oddLengthArray,5,3,0)==2);	
 	assert(binarySearchWithIndex(oddLengthArray,5,4,0)==3);
