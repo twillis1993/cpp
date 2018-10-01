@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <catch.hpp>
 
 bool binarySearch(int* array, int arrayLength, int value) {		
 	if(value == *(array+((arrayLength-1)/2)))

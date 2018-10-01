@@ -21,6 +21,12 @@
 * Need to initialise member references in the initialiser list
 * Copy constructor is a thing
 * Take care when allocating memory in classes. Safer to allocate in constructor, free in destructor
+* Multidimensional arrays may be more efficiently represented as one-dimensional arrays due to the latter's great cache coherency (i.e. new doesn't guarantee contiguous blocks of memory)
+* Correct and liberal use of the const keyword can improve efficiency and readability of code
+* Don't compare floating point numbers with '=='
+* Use doubles as parameters when calling math functions
+* When creating an instance with the no-arg constructor, the parentheses must be omitted, e.g. 'Foo myFoo;' not 'Foo myFoo();'. Otherwise one can expect weird compile-time errors.
+
 
 # Virtual functions
 
@@ -30,11 +36,20 @@ Virtual functions are inheritable and overridable functions for which dynamic di
 
 # References vs. pointers
 
+(C++) references (a.k.a. reference variables) and pointers are both reference datatypes.
+
+References work like pointers and provide one with an alias to the assigned variable. A reference contains the memory address of a variable.
+
 References are like pointers but:
 
 * are dereferenced like instances 
 * can never be NULL
-* can only be assigned once, at creation
+* can only be assigned once, at creation. They are a named constant for an address (although the value at this address can be changed using the reference)
+* referencing and dereferencing on references. It is not necessary to use '&' when assigning a variable to the reference nor a '\*' when obtaining the value of variable to which the reference points.
+
+References are declared with '&', which is part of the type identifier in this context.
+
+Most common use of reference variables is as the function formal parameter for pass-by-reference. Code is neater than if same is done with pointers.
 
 # Class instances vs. pointers
 
