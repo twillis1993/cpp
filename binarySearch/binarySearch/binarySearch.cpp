@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 
 bool binarySearch(int* array, int arrayLength, int value) {		
 	if(value == *(array+((arrayLength-1)/2)))
@@ -24,6 +23,7 @@ int binarySearchWithIndex(int* array, int arrayLength, int value, int index) {
 		return binarySearchWithIndex((array+((arrayLength-1)/2))+1,arrayLength-((arrayLength-1)/2)+1,value,index+((arrayLength-1)/2)+1);
 }
 
+/*
 int main(int argc, char** argv) {
 	int singletonArray[] = {1};
 
@@ -67,4 +67,4 @@ int main(int argc, char** argv) {
 	
 	return 0;
 }
-
+*/
