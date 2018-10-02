@@ -1,5 +1,6 @@
-#file(GLOB SOURCES "*.cpp")
+SET(binarySearch_SRCS "binarySearch.cpp" "binarySearch.hpp")
 
-SET(main_srcs "main.cpp")
+ADD_LIBRARY(binarySearch STATIC ${binarySearch_SRCS})
 
-ADD_EXECUTABLE(main ${main_srcs})
+# Public?
+TARGET_INCLUDE_DIRECTORIES(binarySearch PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
