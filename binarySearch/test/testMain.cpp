@@ -2,7 +2,7 @@
 #include "catch.hpp"
 #include "binarySearch.hpp"
 
-TEST_CASE("Testing binary search") {
+TEST_CASE("Testing singleton array") {
 	int singletonArray[] = {1};
 
 	REQUIRE(binarySearch(singletonArray,1,1)==true);
@@ -10,6 +10,9 @@ TEST_CASE("Testing binary search") {
 
 	REQUIRE(binarySearchWithIndex(singletonArray,1,1,0)==0);
 	REQUIRE(binarySearchWithIndex(singletonArray,1,2,0)==-1);	
+}
+
+TEST_CASE("Testing array of even length") {
 	
 	int evenLengthArray[] = {1,2,3,4};
 	
@@ -24,6 +27,9 @@ TEST_CASE("Testing binary search") {
 	REQUIRE(binarySearchWithIndex(evenLengthArray,4,3,0)==2);
 	REQUIRE(binarySearchWithIndex(evenLengthArray,4,4,0)==3);	
 	REQUIRE(binarySearchWithIndex(evenLengthArray,4,5,0)==-1);	
+}
+
+TEST_CASE("Testing array of odd length") {
 
 	int oddLengthArray[] = {1,2,3,4,5};
 
@@ -41,4 +47,3 @@ TEST_CASE("Testing binary search") {
 	REQUIRE(binarySearchWithIndex(oddLengthArray,5,4,0)==3);
 	REQUIRE(binarySearchWithIndex(oddLengthArray,5,5,0)==4);
 }
-
