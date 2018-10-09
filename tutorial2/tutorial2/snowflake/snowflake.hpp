@@ -1,18 +1,17 @@
 
 class MyWidget : public QWidget {
-public:
+	public:
+		MyWidget();
+		virtual ~MyWidget();
+		void EnableMouse();
+		void enableKeyboard();
 
-  // mouse tracking must be enabled
-  void EnableMouse();
+	protected:
+		virtual void paintEvent(QPaintEvent*);
+		virtual void mouseMoveEvent(QMouseEvent*);
+//		virtual void keyPressEvent(QKeyEvent*);
 
-protected:
-
-  virtual void paintEvent(QPaintEvent*);
-  virtual void mouseMoveEvent(QMouseEvent*);
-
-private:
+	private:
+		QElapsedTimer* clickTimer;
 
 };
-
-
-

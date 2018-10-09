@@ -5,5 +5,9 @@ public:
   
   MyMainWindow();
 
+protected:
+
+	virtual void keyPressEvent(QKeyEvent*);
+
 };
 

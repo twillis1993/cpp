@@ -1,29 +1,42 @@
-
 #include <QtGui>
 #include <QApplication>
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QPainter>
 #include <QDesktopWidget>
+#include <QElapsedTimer>
+#include <QKeyEvent>
 #include <iostream>
 #include "snowflake.hpp"
 #include "MyMainWindow.hpp"
 
+MyWidget::MyWidget() {
+	clickTimer = new QElapsedTimer();
+	clickTimer->start();
+}
+
+MyWidget::~MyWidget() {
+	delete clickTimer;
+}
+
 void MyWidget::EnableMouse()
 {
-  // you must set mouse tracking, it's off by default
   this->setMouseTracking(true);
 }
 
 void MyWidget::mouseMoveEvent(QMouseEvent *_event)
 {
-  if (this->rect().contains(_event->pos())) {
-    // Mouse over Widget
-    QMessageBox::information(this,"snowflake","Cut that out!");
+  if (this->rect().contains(_event->pos()) && this->clickTimer->hasExpired(10000))  {
+	QMessageBox::information(this,"Hey!","Cut that out!");
+	this->clickTimer->restart();
   }
   else {
     // Mouse out of Widget
   }
+}
+
+void MyMainWindow::keyPressEvent(QKeyEvent*) {
+	QMessageBox::information(this, "Hey!", "Don't do that, either!");
 }
 
 void MyWidget::paintEvent( QPaintEvent * )
