@@ -11,6 +11,7 @@
 #include "MyMainWindow.hpp"
 
 MyWidget::MyWidget() {
+	this->setFocusPolicy(Qt::StrongFocus);
 	clickTimer = new QElapsedTimer();
 	clickTimer->start();
 }
@@ -35,8 +36,12 @@ void MyWidget::mouseMoveEvent(QMouseEvent *_event)
   }
 }
 
-void MyMainWindow::keyPressEvent(QKeyEvent*) {
-	QMessageBox::information(this, "Hey!", "Don't do that, either!");
+void MyWidget::keyPressEvent(QKeyEvent* event) {
+	if (event->key() == Qt::Key_Escape) {
+		QApplication::exit(0);
+	} else {
+		QMessageBox::information(this, "Hey!", "Don't do that, either!");
+	}
 }
 
 void MyWidget::paintEvent( QPaintEvent * )

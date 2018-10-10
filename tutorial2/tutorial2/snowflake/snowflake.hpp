@@ -1,4 +1,3 @@
-
 class MyWidget : public QWidget {
 	public:
 		MyWidget();
@@ -9,7 +8,7 @@ class MyWidget : public QWidget {
 	protected:
 		virtual void paintEvent(QPaintEvent*);
 		virtual void mouseMoveEvent(QMouseEvent*);
-//		virtual void keyPressEvent(QKeyEvent*);
+		virtual void keyPressEvent(QKeyEvent*);
 
 	private:
 		QElapsedTimer* clickTimer;
