@@ -4,11 +4,12 @@
 #include <MyMainWindow.hpp>
 
 int main(int argc, char **argv) {
-  QApplication app(argc, argv);
+	QApplication app(argc,argv);
 
-  MyMainWindow window;
+	MyMainWindow window;
+	
+	window.show();
 
-  //window.show();
-
-  return app.exec();
+	printf("Hello world!\n");
+  	return app.exec();
 }
