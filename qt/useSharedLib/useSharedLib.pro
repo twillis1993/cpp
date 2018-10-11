@@ -5,7 +5,7 @@
 TEMPLATE = app
 TARGET = useSharedLib
 INCLUDEPATH += simpleSharedLibrary/include
-#LIBS += -L../simpleSharedLibrary/lib -lsimpleSharedLibrary
+LIBS += -L../simpleSharedLibrary/lib -lsimpleSharedLibrary
 QT += gui widgets
 
 SOURCES += src/main.cpp
