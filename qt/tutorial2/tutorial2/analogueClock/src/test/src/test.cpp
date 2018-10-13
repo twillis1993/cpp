@@ -1,4 +1,5 @@
 #include <test.hpp>
+#include <analogueClock.hpp>
 
 void TestQString::toUpper() {
 	QString str = "Hello";

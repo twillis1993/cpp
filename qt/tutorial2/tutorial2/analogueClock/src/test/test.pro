@@ -1,8 +1,8 @@
 TEMPLATE += app
-QT += testlib
+QT += testlib gui widgets
 CONFIG += testcase
 INCLUDEPATH += "include" 
-INCLUDEPATH += "../analogueClock/include"
+INCLUDEPATH += "$$PWD/../analogueClock/include" "$$PWD/../MyMainWindow/include"
 
 HEADERS += "include/test.hpp"
 SOURCES += "src/test.cpp"
