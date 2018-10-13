@@ -10,4 +10,5 @@ QT += gui widgets
 INCLUDEPATH += "include"
 INCLUDEPATH += "$$PWD/../MyMainWindow/include"
 		
-SOURCES += src/main.cpp
+SOURCES += "src/main.cpp" \
+		"src/analogueClock.cpp"
