@@ -5,7 +5,7 @@
 TEMPLATE = lib
 CONFIG += staticlib
 TARGET = MyMainWindow
-INCLUDEPATH += src/include
+INCLUDEPATH += include
 QT += gui widgets
 
 # Input
