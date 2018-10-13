@@ -4,8 +4,9 @@
 
 TEMPLATE = app
 TARGET = analogueClock
-INCLUDEPATH += "../MyMainWindow/include"
-LIBS += -L"../MyMainWindow" -l"MyMainWindow"
+#INCLUDEPATH += "../MyMainWindow/include"
+#LIBS += -L"../MyMainWindow" -l"MyMainWindow"
 QT += gui widgets
 
+INCLUDEPATH += include
 SOURCES += src/main.cpp
