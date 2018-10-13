@@ -1,6 +1,6 @@
 #include <QMainWindow>
 #include <QDesktopWidget>
-#include "MyMainWindow.hpp"
+#include <MyMainWindow.hpp>
 #include <stdio.h>
 
 MyMainWindow::MyMainWindow(){
