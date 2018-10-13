@@ -1,4 +1,6 @@
-class AnalogueClock  {
+#include <MyMainWindow.hpp>
+
+class AnalogueClock : public MyMainWindow  {
 
 	public:
 		AnalogueClock();

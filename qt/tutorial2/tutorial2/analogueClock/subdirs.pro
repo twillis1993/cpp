@@ -2,12 +2,12 @@ TEMPLATE = subdirs
 
 SUBDIRS = \
 	analogueClock \
-	MyMainWindow \
+	MyMainWindow # \
 	test
 
 analogueClock.subdir = "src/analogueClock"
 MyMainWindow.subdir = "src/MyMainWindow"
-test.subdir = "src/test"
+#test.subdir = "src/test"
 
 analogueClock.depends = MyMainWindow
-test.depends = analogueClock
+#test.depends = analogueClock
