@@ -66,8 +66,16 @@ void AnalogueClock::paintEvent(QPaintEvent *)
         QPoint(0, -70)
     };
 
+    // TODO make more slender
+    static const QPoint secondHand[3] = {
+        QPoint(7, 8),
+        QPoint(-7, 8),
+        QPoint(0, -70)
+    };
+
     QColor hourColor(127, 0, 127);
     QColor minuteColor(0, 127, 127, 191);
+    QColor secondColor(127, 0, 0, 191);
 
     int side = qMin(width(), height());
     QTime time = QTime::currentTime();
@@ -81,8 +89,12 @@ void AnalogueClock::paintEvent(QPaintEvent *)
     painter.setBrush(hourColor);
 
     painter.save();
+
+    // 30 degrees per hour increment
     painter.rotate(30.0 * ((time.hour() + time.minute() / 60.0)));
     painter.drawConvexPolygon(hourHand, 3);
+
+    // Rotate painter, paint, then reverse rotation
     painter.restore();
 
     painter.setPen(hourColor);
@@ -96,8 +108,11 @@ void AnalogueClock::paintEvent(QPaintEvent *)
     painter.setBrush(minuteColor);
 
     painter.save();
+
+    // 6 degrees per minute increment
     painter.rotate(6.0 * (time.minute() + time.second() / 60.0));
     painter.drawConvexPolygon(minuteHand, 3);
+
     painter.restore();
 
     painter.setPen(minuteColor);
@@ -107,4 +122,15 @@ void AnalogueClock::paintEvent(QPaintEvent *)
             painter.drawLine(92, 0, 96, 0);
         painter.rotate(6.0);
     }
+
+    painter.setPen(Qt::NoPen);
+    painter.setBrush(secondColor);
+
+    painter.save();
+
+    // 6 degrees per second increment
+    painter.rotate(6.0 * time.second());
+    painter.drawConvexPolygon(secondHand, 3);
+
+    painter.restore();
 }
