@@ -52,6 +52,7 @@ AnalogueClock::AnalogueClock(QWidget *parent)
     resize(200, 200);
 }
 
+// NB: paintEvent() is called when update() is called
 void AnalogueClock::paintEvent(QPaintEvent *)
 {
     static const QPoint hourHand[3] = {
@@ -66,10 +67,9 @@ void AnalogueClock::paintEvent(QPaintEvent *)
         QPoint(0, -70)
     };
 
-    // TODO make more slender
     static const QPoint secondHand[3] = {
-        QPoint(7, 8),
-        QPoint(-7, 8),
+        QPoint(4, 4),
+        QPoint(-4, 4),
         QPoint(0, -70)
     };
 
