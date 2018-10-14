@@ -11,4 +11,7 @@ INCLUDEPATH += "include"
 INCLUDEPATH += "$$PWD/../MyMainWindow/include"
 		
 SOURCES += "src/main.cpp" \
-		"src/analogueClock.cpp"
+		"src/analogueClockWindow.cpp" \
+		"src/AnalogueClock.cpp"
+
+HEADERS += "include/AnalogueClock.hpp"

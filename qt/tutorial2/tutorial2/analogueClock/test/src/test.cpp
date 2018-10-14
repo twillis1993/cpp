@@ -1,5 +1,5 @@
 #include <test.hpp>
-#include <analogueClock.hpp>
+#include <analogueClockWindow.hpp>
 
 // TODO placeholder, change me
 void TestQString::toUpper() {

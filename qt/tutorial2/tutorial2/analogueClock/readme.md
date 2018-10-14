@@ -1,3 +1,7 @@
+# Analogue clock
+
+Uses the code found at <http://doc.qt.io/archives/qt-4.8/coordsys.html>.
+
 # Running tests
 
 The project can be build and tests run with:

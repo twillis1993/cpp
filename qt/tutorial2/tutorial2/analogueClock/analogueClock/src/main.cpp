@@ -1,7 +1,8 @@
 #include <QtGui>
 #include <QApplication>
 #include <QMainWindow>
-#include <analogueClock.hpp>
+#include <analogueClockWindow.hpp>
+#include <AnalogueClock.hpp>
 
 int main(int argc, char **argv) {
   QApplication app(argc, argv);  
