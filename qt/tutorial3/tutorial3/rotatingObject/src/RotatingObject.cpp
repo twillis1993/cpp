@@ -4,7 +4,7 @@
 RotatingObject::RotatingObject(QWidget* parent) : QWidget(parent) {
 	QTimer *timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(update()));
-	timer->start(1000);
+	timer->start(1);
 	
 	resize(200,200);	
 }
@@ -19,6 +19,10 @@ void RotatingObject::paintEvent(QPaintEvent *) {
 	painter.setWindow(-50, -50, 100, 100);
 
 	painter.setViewport((width()-side)/2, (height()-side)/2, side, side);
+
+	QTime time = QTime::currentTime();
+
+	painter.rotate(0.360 * time.msec());
 
 	painter.drawRect(QRectF(0,0,10,10));
 }
