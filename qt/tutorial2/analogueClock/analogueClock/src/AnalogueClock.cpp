@@ -52,7 +52,7 @@ AnalogueClock::AnalogueClock(QWidget *parent)
     resize(200, 200);
 }
 
-// NB: paintEvent() is called when update() is called
+// NB: paintEvent() is called when update() is called. Calling update() schedules a paint event for processing when Qt returns to the main event loop
 void AnalogueClock::paintEvent(QPaintEvent *)
 {
     static const QPoint hourHand[3] = {
