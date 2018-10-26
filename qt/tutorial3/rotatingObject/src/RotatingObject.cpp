@@ -18,7 +18,7 @@ void RotatingObject::paintEvent(QPaintEvent *) {
 
 	painter.setWindow(-50, -50, 100, 100);
 
-	painter.setViewport((width()-side)/2, (height()-side)/2, side, side);
+	painter.setViewport((width()-side)/4, (height()-side)/4, side, side);
 
 	QTime time = QTime::currentTime();
 
