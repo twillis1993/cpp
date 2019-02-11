@@ -1,1 +1,1 @@
-void quicksort(int* array, int arrayLength);
+int* quicksort(int* array, int arrayLength);

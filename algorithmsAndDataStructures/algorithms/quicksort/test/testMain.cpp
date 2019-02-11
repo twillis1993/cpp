@@ -3,13 +3,16 @@
 #include "catch.hpp"
 #include "quicksort.hpp"
 
-TEST_CASE("Testing build") {
-	printf("Hello world!");
+TEST_CASE("Testing singleton array") {	
+	int singletonArray[] = {1};
+	
+	REQUIRE(*quicksort(singletonArray, 1)==1);
 }
+
+
 
 /*
 TEST_CASE("Testing singleton array") {
-	int singletonArray[] = {1};
 
 	REQUIRE(binarySearch(singletonArray,1,1)==true);
 	REQUIRE(binarySearch(singletonArray,1,2)==false);	

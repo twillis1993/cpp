@@ -2,4 +2,10 @@
 #include <stdlib.h>
 #include <quicksort.hpp>
 
-void quicksort(int* array, int arrayLength) {};
+int* quicksort(int* array, int arrayLength) {
+	if(arrayLength == 1) {
+		return array;
+	} else {
+		*(array+(arrayLength/2))
+	}
+}
